@@ -93,4 +93,4 @@ O projeto foi desenvolvido em um Jupyter Notebook, dividido em etapas claras:
 ## ▶️ Como Executar
 
 ```bash
-git clone https://github.com/seuusuario/nome-do-repositorio.git
+git clone https://git@github.com:Anderson-Caetano/Desafio_Telecom_X_parte2.ipynb.git
