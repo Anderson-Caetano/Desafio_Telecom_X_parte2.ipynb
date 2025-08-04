@@ -1,45 +1,96 @@
-🧠 Previsão de Evasão de Clientes (Churn) – Telecom X
-Este repositório contém um projeto completo de Machine Learning voltado para a previsão de churn (evasão) de clientes em uma empresa fictícia de telecomunicações chamada Telecom X.
+# 📊 Análise de Evasão de Clientes (Churn) - Telecom X
 
-📌 Objetivos do Projeto
-Realizar o pré-processamento dos dados (limpeza, codificação e normalização);
+Este projeto tem como objetivo investigar os fatores que influenciam a evasão de clientes (churn) em uma operadora de telecomunicações fictícia chamada **Telecom X**. Através de análise de dados, visualizações, engenharia de atributos e modelagem preditiva, buscamos entender o comportamento dos clientes e prever quais têm maior probabilidade de deixar a empresa.
 
-Analisar correlação entre variáveis e realizar seleção de atributos relevantes;
+---
 
-Treinar e comparar diferentes modelos de classificação (como Regressão Logística e Random Forest);
+## 🧠 Objetivos
 
-Avaliar o desempenho com métricas apropriadas (Acurácia, Matriz de Confusão, ROC AUC);
+- Explorar e tratar os dados de clientes da Telecom X.
+- Identificar padrões associados à evasão.
+- Construir modelos preditivos capazes de antecipar o churn.
+- Oferecer insights e recomendações para reduzir a perda de clientes.
 
-Interpretar os resultados com foco em insights estratégicos para o negócio.
+---
 
-📂 Estrutura
-telecom_churn_predicao_traduzido.ipynb: notebook com todas as etapas do projeto comentadas e com variáveis em português.
+## 📁 Estrutura do Projeto
 
-📊 Dataset original (TelecomX_Data.json) carregado diretamente de fonte pública.
+O projeto foi desenvolvido em um Jupyter Notebook, dividido em etapas claras:
 
-Visualizações, métricas e conclusões incluídas.
+### 1. 📌 Extração
+- Leitura dos dados diretamente de uma URL externa em formato JSON.
+- Conversão para DataFrame com pandas.
 
-🚀 Tecnologias Utilizadas
-Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
+### 2. 🧼 Transformação
+- Expansão de colunas aninhadas com `json_normalize`.
+- Remoção de colunas irrelevantes.
+- Padronização dos nomes de colunas.
+- Codificação da variável churn (0 = ativo, 1 = evadiu).
+- Aplicação de One-Hot Encoding.
 
-Machine Learning supervisionado
+### 3. 📊 Carga e Análise
+- Verificação de dados nulos.
+- Análise da distribuição da variável alvo.
+- Visualização do desequilíbrio e aplicação do SMOTE.
 
-Engenharia de atributos e one-hot encoding
+### 4. ⚖️ Normalização
+- Aplicada em modelos que requerem (ex: Regressão Logística).
+- Uso do `StandardScaler`.
 
-Avaliação com métricas de classificação
+### 5. 🔁 Correlação
+- Análise de variáveis numéricas com a variável alvo.
+- Matriz de correlação com `seaborn`.
 
-💡 Insights Estratégicos
-Os modelos treinados identificam os principais fatores que influenciam a evasão de clientes, como:
+### 6. 📈 Exploração Visual
+- Boxplots de comparação entre `tempo de contrato`, `valor mensal` e `churn`.
+- Análise do número de serviços contratados.
 
-Tipo de contrato
+### 7. ✂️ Divisão dos Dados
+- Separação treino/teste (70/30) com preservação do balanceamento.
 
-Tempo de serviço
+### 8. 🤖 Modelagem
+- Modelos aplicados:
+  - Regressão Logística
+  - Random Forest
+- Avaliação com:
+  - Acurácia
+  - Precisão
+  - Recall
+  - F1-score
+  - ROC AUC
+  - Matriz de Confusão
 
-Método de pagamento
+### 9. 💾 Salvamento e Predições
+- Modelos salvos com `joblib`.
+- Exemplo de uso em novos dados.
 
-Uso de serviços de segurança online
+### 10. 📝 Relatório Final
+- Sumário com introdução, tratamento dos dados, análises, insights e recomendações.
 
-Essas informações podem ser usadas para desenvolver estratégias de retenção de clientes mais eficazes.
+---
 
-🧠 Autor
-Desenvolvido por um Analista de Machine Learning Júnior no contexto do desafio Data Science na Prática – Parte 2.
+## 🔍 Principais Insights
+
+- Clientes com **menor tempo de contrato** tendem a evadir mais.
+- **Valores mensais mais altos** estão associados a maior churn.
+- Menor número de **serviços contratados** = menor engajamento.
+- **Random Forest** teve o melhor desempenho (ROC AUC ≈ 0.83).
+
+---
+
+## 📌 Tecnologias Utilizadas
+
+- Python 3.11
+- pandas
+- seaborn
+- matplotlib
+- scikit-learn
+- imblearn (SMOTE)
+- joblib
+
+---
+
+## ▶️ Como Executar
+
+```bash
+git clone https://github.com/seuusuario/nome-do-repositorio.git
